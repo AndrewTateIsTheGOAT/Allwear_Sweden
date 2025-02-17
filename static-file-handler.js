@@ -22,6 +22,7 @@ export async function handleStaticFileRequest(pathSegments, request, response) {
 		response.writeHead(400, { 'Content-Type': 'text/plain' });
 		response.write('400 Bad Request');
 		response.end();
+		return;
 	}
 
 	let ext = fileName.substring(dotIndex + 1);
@@ -35,10 +36,13 @@ export async function handleStaticFileRequest(pathSegments, request, response) {
 		mimeType = 'text/css;charset=UTF-8';
 	} else if (ext === 'png') {
 		mimeType = 'image/png';
-	} else {
+	} else if (ext === 'webp'){
+		mimeType = 'Image/webp'
+	}else {
 		response.writeHead(500, { 'Content-Type': 'text/plain' });
 		response.write('500 Internal Server Error');
 		response.end();
+		return;
 	}
 
 	let filePath = pathSegments.join('/');

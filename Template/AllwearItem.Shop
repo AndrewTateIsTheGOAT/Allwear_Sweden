@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Allwear Sweden</h1>
+    <img src="/static/%{Bilden}%.webp" alt="svart hoodie">
+    <p>%{BildN}%</p>
+    <p>%{Varupris}%</p>
+    <form action="/RegisterOrder" method="post">
+        <input type="hidden" name="Product" value="%{id}%">
+        <select name="Storlek">
+            <option hidden>Storlek</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <select name="Färg">
+            <option hidden>Färg</option>
+            <option value="Svart">Svart</option>
+            <option value="Grå">Grå</option>
+          </select>
+        <input type="text" name="Namn" placeholder="Full Name" required>
+        <input type="text" name="Land" placeholder="Country" required>
+        <input type="text" name="Adress" placeholder="Adress" required>
+        <button type="submit">Skicka vidare beställningen</button>
+    </form>
+</body>
+
+</html>

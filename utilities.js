@@ -1,4 +1,4 @@
- export function getRequestBody(request) {
+export function getRequestBody(request) {
 	return new Promise(function (resolve, reject) {
 		let chunks = [];
 
